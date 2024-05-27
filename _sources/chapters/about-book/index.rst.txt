@@ -6,7 +6,6 @@ About this book
 
    This chapter is still WIP for the version of the book.
 
-
 How to read this book
 ========================
 
