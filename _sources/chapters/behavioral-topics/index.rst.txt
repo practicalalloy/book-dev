@@ -1,7 +1,8 @@
 .. _behavioral-topics:
 
+
 ************************
-↳ Quick reads
+Behavioral quick reads
 ************************
 
 This chapter presents additional reading on behavioral modelling. These topics build on the file sharing app example model from the previous chapter :ref:`behavioral-modeling`. For reference, we present a clean snapshot of this model below.
@@ -20,6 +21,7 @@ This chapter presents additional reading on behavioral modelling. These topics b
    topics/pointwise-effects/index
    topics/frame-conditions/index
    topics/fairness/index
+   topics/inductive-invariants/index
    topics/sequences/index
    topics/macros/index
    topics/meta/index
