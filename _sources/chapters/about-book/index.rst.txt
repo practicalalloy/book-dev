@@ -16,9 +16,9 @@ How to leave feedback
 How to run examples
 ========================
 
-Install Alloy and get models from repository
+Install Alloy and get models from repository.
 
-How to leave feedback
+About the authors
 ========================
 
 Acknowledgements
