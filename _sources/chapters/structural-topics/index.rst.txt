@@ -1,0 +1,30 @@
+.. _structural-topics:
+
+************************
+↳ Quick reads
+************************
+
+This chapter presents additional reading on more advanced topics for structural modelling. These topics build on the file system example model from the previous chapter :ref:`structural-modeling`. For reference, we present a clean snapshot of this model below.
+
+.. literalinclude:: filesystem.als
+   :language: electrum
+
+.. toctree::
+   :hidden:
+   
+   topics/subset-signatures/index
+   topics/nary-relations/index
+   topics/enumerations/index
+   topics/commands/index
+   topics/themes/index
+   topics/evaluator/index
+   topics/testing-instances/index
+   topics/relational-logic/index
+   topics/bestiary/index
+   topics/ordering/index
+   topics/modules/index
+   topics/recursion/index
+   topics/integers/index
+   topics/type-system/index
+   topics/analysis/index
+

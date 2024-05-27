@@ -1,0 +1,26 @@
+****************************************
+About this book
+****************************************
+
+How to read this book
+========================
+
+How to leave feedback
+========================
+
+How to run examples
+========================
+
+Install Alloy and get models from repository
+
+How to leave feedback
+========================
+
+Acknowledgements
+========================
+
+We would like to thank Daniel Jackson for suggesting some of the
+examples used in this book.
+
+
+This work was financed by the ERDF – European Regional Development Fund through the Operational Programme for Competitiveness and Internationalisation - COMPETE 2020 Programme and by National Funds through the Portuguese funding agency, FCT - Fundação para a Ciência e a Tecnologia, within project `POCI-01-0145-FEDER-016826 <http://haslab.github.io/TRUST/>`_.

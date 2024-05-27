@@ -1,0 +1,36 @@
+****************************************
+Introduction
+****************************************
+
+.. warning::
+
+   This chapter is still WIP for the version of the book.
+
+.. _alloy-versions:
+
+Alloy versions
+====================
+
+
+The main difference of Alloy 6, when compared to previous versions
+of Alloy, is precisely the possibility of declaring mutable sets
+and relations.  The reader may wonder if the previous versions of
+Alloy, where all signatures and relations are immutable, were in
+any way useful. In fact, in many software systems the main design
+problem concerns just structural aspects, for example, eliciting
+requirements about the data structures. We will gave an example of
+this in the :ref:`structural-modeling` chapter. Moreover, it was still
+possible to reason about behavior with Alloy 5, by explicitly
+specifying the notion of time and of execution traces. However,
+this was often a rather time-consuming and error-prone task. The
+`Electrum <http://haslab.github.io/Electrum/>`_ extension [FSE16]_ [ASE18]_ was
+proposed precisely to address this shortcoming. Electrum added an
+implicit notion of time, allowed the declaration of mutable
+signatures and relations, and the specification of properties with
+temporal logic. With Alloy 6, these extensions became a standard
+part of Alloy. For an overview of Alloy 5 check
+`Alloy: A Language and Tool for Exploring Software Designs
+<https://cacm.acm.org/magazines/2019/9/238969-alloy/fulltext>`_
+[CACM19]_ by Daniel Jackson or his excellent book `Software Abstractions: Logic, Language, and Analysis <https://mitpress.mit.edu/books/software-abstractions-revised-edition>`_ [MIT12]_.
+
+.. todo:: Add brief historical note, talk about other dynamic extensions.

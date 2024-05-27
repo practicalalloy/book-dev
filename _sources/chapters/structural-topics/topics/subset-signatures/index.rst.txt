@@ -1,0 +1,191 @@
+.. _subset-signatures:
+
+Subset signatures
+=====================
+
+.. index::
+   ! signature; subset
+   ! multiple inheritance
+   signature; sub-signature
+
+Sets (unary relations) can be introduced in a model through subset signatures.
+As we've already seen, unlike sub-signatures defined by extension, these are not
+guaranteed to be disjoint among themselves. In the main chapter
+:ref:`structural-modeling` we've seen the basic use of subset signatures, but
+since we actually expected those subset signatures to be disjoint, there were
+better modelled as sub-signatures. That is not always the case, and in fact
+subset signatures can be used to encode powerful patterns, including something
+that akin to multiple inheritance.
+
+Subsets orthogonal to sub-signatures
+------------------------------------
+
+Let us add the ability to tag objects in the file system example from the main
+chapter :ref:`structural-modeling` (such as supported by operating systems like
+macOS). The concept of tagged object is transversal to the signature
+:alloy:`Object`, since both regular files and directories can be tagged. On the
+other hand, not all objects are necessarily tagged. So this feature is best
+encoded as a subset signature as follows.
+
+.. code-block::
+
+    sig Tagged in Object {}
+
+If we now ask the Analyzer for instances of this model there may exist objects
+that are both in :alloy:`File` and :alloy:`Tagged` and :alloy:`Dir` and
+:alloy:`Tagged`. The following is one such possible instance for the empty
+command :alloy:`example`. Since :alloy:`Tagged` is a subset signature, the fact
+that an atom belongs to it is marked as an attribute of the node below its name
+(the label of the atom always uses the most specific extension signature).
+
+.. image:: instance1.png
+   :width: 500 px
+   :align: center
+
+Even more interesting, subset signatures can have their own fields declared
+within. For instance, let's introduce a signature :alloy:`Tag` to represent
+abstract tags, and then extend signature :alloy:`Tagged` to also register the
+non-empty set of tags assigned to each object, as follows.
+
+.. code-block::
+
+    sig Tag {}
+
+    sig Tagged in Object {
+        tags : some Tag
+    }
+
+Now, for instance, any tagged directory will both be related through relations
+:alloy:`entries` (inherited from :alloy:`Dir`) and :alloy:`tags` (inherited from
+:alloy:`Tagged`). Below is one such example for the same command, where the root
+has both entries and tags (in the theme, we've hidden :alloy:`Tag` atoms, set
+field :alloy:`tags` to be shown as an attribute, and also removed the namespace
+from the subset labels).
+
+.. image:: instance2.png
+   :width: 500 px
+   :align: center
+
+Simulating multiple inheritance
+-------------------------------
+
+In the current model, any :alloy:`Object` atom can be tagged or not. Using this
+kind of signatures (and facts for additional constraints), we can enforce
+multiple inheritance at the structural level, creating a signature whose atoms
+inherit fields from multiple signatures while possibly introducing its own.
+Let's say, for the sake of example, that we want to present to users the objects
+contained in a tagged directory that are also tagged. We want to register this
+information in a new field :alloy:`tagged_content` of such tagged directories. We
+can define a new signature that inherits from directories and tagged objects,
+and also introduces the new local field :alloy:`tagged_content`, as follows.
+
+.. code-block::
+
+    sig TaggedDir extends Dir {
+      tagged_content : set Object
+    }
+
+    fact tagged_dirs { 
+      TaggedDir in Tagged 
+    }
+
+By extension, all atoms of :alloy:`TaggedDir` are directories; the additional
+fact :alloy:`tagged_dirs` forces those atoms to also be tagged. Moreover, they
+are all also related by the new field :alloy:`tagged_content` to a set of
+objects. Note that this encoding still allows other tagged directories to exist
+outside of :alloy:`TaggedDir`: we are only forcing all objects in
+:alloy:`TaggedDir` to be tagged. That could be enforced with a stronger fact
+instead, such as :alloy:`TaggedDir = Tagged & Dir` (:alloy:`TaggedDir` is exactly
+the set of directories that are tagged).
+
+However, if we start to validate our model, we'll quickly realize that there are
+some instances that are missing: the root directory will never belong to
+:alloy:`TaggedDir`. The reason is that :alloy:`Root` was also defined as an
+extension of :alloy:`Dir`, and thus necessarily disjoint with :alloy:`TaggedDir`.
+As always, as our signature hierarchy becomes more complex, we should frequently
+validate our model through :alloy:`run` commands. In this case, this could be
+solved by defining the :alloy:`Root` signature by inclusion instead. Below is a
+possible instance of this model for the :alloy:`example` command.
+
+.. image:: instance3.png
+   :width: 500 px
+   :align: center
+
+Cross-signature subsets
+-----------------------
+
+Another interesting feature of subset signatures is that they can be defined to
+be a subset of a union of multiple signatures using the :alloy:`+` operator,
+rather than just one as we've seen thus far. Let us extend our example again,
+and consider that our file system also supports symbolic links as a distinct
+type of object.
+
+.. code-block::
+
+    sig Symlink extends Object {}
+
+Our system will not allow symbolic links to be tagged (they just assume the tags
+of the file they link to). We could enforce this through an additional fact that
+restricted the value of :alloy:`Tagged`, but this can be directly achieved at the
+signature level by adapting its declaration as follows.
+
+.. code-block::
+
+    sig Tagged in Dir + File {
+        tags : some Tag
+    }
+
+Now subset :alloy:`Tagged` is restricted to only :alloy:`Dir` and :alloy:`File`
+atoms, excluding other types of objects. In fact, although :alloy:`Dir` and
+:alloy:`File` share the same top-level signature :alloy:`Object`, signatures can
+be defined as the subset of the union of completely unrelated signatures. You
+will probably notices that you will have to customize the theme again at this
+point. This is because in the previous version, subset :alloy:`Tagged` and field
+:alloy:`tags` were defined for the full signature :alloy:`Object` in the theme; at
+this point, they are no longer defined for all objects, but only for signatures
+:alloy:`File` and :alloy:`Dir`. At the theme level, this will result in the
+duplication of :alloy:`Tagged` and :alloy:`tags` for these two signatures, which
+have to be customized again.
+
+.. index::
+   ! signature; equality
+
+One last, and less common, way to define subset signatures is through equality
+rather than inclusion using the operator :alloy:`=`. For instance, let's say that
+we wish to assign user permissions to exactly all :alloy:`Dir` and :alloy:`File`
+atoms. This could be done as follows.
+
+.. code-block::
+
+    sig Permission {}
+
+    sig BasicFiles = Dir + File {
+        permission : one Permission
+    }
+
+An instance for the empty command for this version of the model is the following.
+
+.. image:: instance4.png
+   :width: 500 px
+   :align: center
+
+Obviously, this example is a bit contrived since a simpler solution would be to
+extend :alloy:`Object` with a signature for objects with permissions and then
+have :alloy:`Dir` and :alloy:`File` extend that new signature. Nonetheless,
+likewise inclusion signatures, they can also be the result of the union of
+unrelated signatures, which could not be solved in such a manner.
+
+On a last note, due to all the flexibility of subset signatures, particularly
+the fact that they may contain atoms from unrelated signatures, they can not be
+further extended with sub-signatures.
+
+.. card-carousel:: 1
+
+   .. card:: Visualization customization
+      :link-type: ref
+      :link: theme-customization
+
+      :octicon:`link` Further reading
+      ^^^
+      Throughout the chapter we've customized the visualization of instances. Learn in more detail how this can ease instance interpretation.
+

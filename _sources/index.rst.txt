@@ -1,0 +1,60 @@
+.. AlloyBook documentation master file, created by
+   sphinx-quickstart on Sat Feb 29 17:02:55 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Practical Alloy
+==============================================
+
+A hands-on guide to formal software design
+------------------------------------------
+
+This book is an introduction to formal software specification and analysis with `Alloy 6 <https://alloytools.org>`_. In this (latest) version, Alloy already allows the specification of behavioural designs with mutable relations and temporal logic, an extension previously implemented in `Electrum <http://haslab.github.io/Electrum/>`_.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Preface
+   :hidden:
+
+   chapters/about-alloy/index
+   chapters/about-book/index
+   writer-notes
+
+.. toctree::
+   :maxdepth: 2
+   :caption: The Basics
+   :hidden:
+
+   chapters/structural-modeling/index
+   chapters/structural-topics/index
+   chapters/behavioral-modeling/index
+   chapters/behavioral-topics/index
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Applications
+
+   chapters/protocol-design/index
+   chapters/app-design/index
+   chapters/interaction-design/index
+   chapters/system-design/index
+
+.. .. toctree::
+..    :maxdepth: 2
+..    :caption: Old version
+.. 
+..    old-source/overview/index
+..    old-source/structural-design/index
+..    old-source/protocol-design/index
+..    old-source/modelling-tips/index
+..    old-source/relational-logic/index
+..    old-source/temporal-logic/index
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Resources
+
+   bibliography
+   genindex

@@ -1,0 +1,45 @@
+.. raw:: latex
+
+   \cleardoublepage
+   \begingroup
+   \renewcommand\chapter[1]{\endgroup}
+   \phantomsection
+
+Bibliography
+************
+
+.. [MIT12] Daniel Jackson: *Software Abstractions: Logic, Language, and Analysis*. Revised edition. MIT Press, 2012.
+
+.. [FSE16] Nuno Macedo, Julien Brunel, David Chemouil, Alcino Cunha, Denis Kuperberg: *Lightweight specification and analysis of dynamic systems with rich configurations*. In proceedings of the 24th ACM SIGSOFT International Symposium on Foundations of Software Engineering, pages 373-383. ACM, 2016.
+
+.. [ASE18] Julien Brunel, David Chemouil, Alcino Cunha, Nuno Macedo: *The electrum analyzer: model checking relational first-order temporal specifications*. In proceedings of the 33rd ACM/IEEE International Conference on Automated Software Engineering, pages 884-887. ACM, 2018.
+
+.. [FIDE19] Julien Brunel, David Chemouil, Alcino Cunha, Nuno Macedo: *Simulation under Arbitrary Temporal Logic Constraints*. In proceedings of the 5th International Workshop on Formal Integrated Development Environment, pages 63-69, volume 310 of EPTCS. 2019.
+
+.. [CACM19] Daniel Jackson: *Alloy: a language and tool for exploring software designs*. Communications of the ACM 62(9): 66-76. ACM, 2019.
+
+.. [JAC21] Daniel Jackson: *The Essence of Software: why concepts matter for great design*. Princeton University Press, 2021.
+
+.. [TOPLAS94] Leslie Lamport: *The Temporal Logic of Actions*. ACM Transactions on Programming Languages and Systems 16(3): 872-923. ACM, 1994.
+
+.. [FSE04] Jonathan Edwards, Daniel Jackson, Emina Torlak: *A type system for object models*. In proceedings of the 12th ACM SIGSOFT International Symposium on Foundations of Software Engineering, pages 189-199. ACM, 2004.
+
+.. [LED07] Derek Rayside, Felix Sheng-Ho Chang, Greg Dennis, Robert Seater, Daniel Jackson: *Automatic Visualization of Relational Logic Models*. In proceedings of the Workshop on the Layout of (Software) Engineering Diagrams, volume 7 of ECEASST. 2007.
+
+.. [CACM79] Ernest J. H. Chang, Rosemary Roberts: *An Improved Algorithm for Decentralized Extrema-Finding in Circular Configurations of Processes*. Communications of the ACM 22(5): 281-283. ACM, 1979.
+
+.. [CAV03] Cindy Eisner, Dana Fisman, John Havlicek, Yoad Lustig, Anthony McIsaac, David Van Campenhout: *Reasoning with Temporal Logic on Truncated Paths*. International conference on computer aided verification. Springer, 2003.
+
+.. [FOCS77] Amir Pnueli: *The Temporal Logic of Programs*. Annual Symposium on Foundations of Computer Science. IEEE, 1977.
+
+.. [POPL80]  Dov Gabbay, Amir Pnueli, Saharon Shelah,  Jonathan Stavi: *On the temporal analysis of fairness*. In proceedings of the 7th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages. ACM, 1980.
+
+.. [EATCS03] Nicolas Markey: *Temporal Logic with Past is Exponentially More Succinct*. Bulletin of the European Association for Theoretical Computer Science, 2003.
+
+.. [LP81] Edmund M. Clarke, E. Allen Emerson: *Design and Synthesis of Synchronization Skeletons Using Branching-Time Temporal Logic*. In proceedings of Logics of Programs, Springer, 1981.
+
+.. [LICS90] Rajeev Alur, David Dill, Costas Courcoubetis: *Model-checking for real-time systems*. In proceedings of the 5th Annual Symposium on Logic in Computer Science. IEEE, 1990.
+
+.. [JACM85] Aravinda P. Sistla, Edmund M. Clarke: *The complexity of propositional linear temporal logics*. Journal of the ACM 32(3):733-749. ACM, 1985. 
+
+.. [TSE77] Leslie Lamport: *Proving the correctness of multiprocess programs*. Transaction of Software Engineering SE-3(2), 125-143, IEEE, 1977.
