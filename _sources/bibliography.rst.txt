@@ -42,6 +42,10 @@ Bibliography
 
 .. [LICS90] Rajeev Alur, David Dill, Costas Courcoubetis: *Model-checking for real-time systems*. In proceedings of the 5th Annual Symposium on Logic in Computer Science. IEEE, 1990.
 
-.. [JACM85] Aravinda P. Sistla, Edmund M. Clarke: *The complexity of propositional linear temporal logics*. Journal of the ACM 32(3):733-749. ACM, 1985. 
+.. [JACM85] Aravinda Prasad Sistla, Edmund M. Clarke: *The complexity of propositional linear temporal logics*. Journal of the ACM 32(3):733-749. ACM, 1985. 
 
 .. [TSE77] Leslie Lamport: *Proving the correctness of multiprocess programs*. Transaction of Software Engineering SE-3(2), 125-143, IEEE, 1977.
+
+.. [IPL85] Bowen Halpern, Fred B. Schneider: *Defining Liveness*. Information Processsing Letters 21, 1985.
+
+.. [FAC94] Aravinda Prasad Sistla: *Safety, liveness, and fairness in temporal logic*. Formal Aspects of Computing 6. ACM. 1994
