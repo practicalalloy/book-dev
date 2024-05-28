@@ -10,6 +10,8 @@ Bibliography
 
 .. [MIT12] Daniel Jackson: *Software Abstractions: Logic, Language, and Analysis*. Revised edition. MIT Press, 2012.
 
+.. [SCP21] Nuno Macedo, Alcino Cunha, José Pereira, Renato Carvalho, Ricardo Silva, Ana C. R. Paiva, Miguel Sozinho Ramalho, Daniel Castro Silva: *Experiences on teaching alloy with an automated assessment platform*. Science of Computer Programming 211: 102690. Springer, 2021.
+
 .. [FSE16] Nuno Macedo, Julien Brunel, David Chemouil, Alcino Cunha, Denis Kuperberg: *Lightweight specification and analysis of dynamic systems with rich configurations*. In proceedings of the 24th ACM SIGSOFT International Symposium on Foundations of Software Engineering, pages 373-383. ACM, 2016.
 
 .. [ASE18] Julien Brunel, David Chemouil, Alcino Cunha, Nuno Macedo: *The electrum analyzer: model checking relational first-order temporal specifications*. In proceedings of the 33rd ACM/IEEE International Conference on Automated Software Engineering, pages 884-887. ACM, 2018.

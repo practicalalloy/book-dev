@@ -1,0 +1,3 @@
+li.has-children > a:before {
+    text-rendering: optimizeLegibility; font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f5d2"; margin-right: 4px;
+}

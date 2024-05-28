@@ -1,9 +1,5 @@
 .. _protocol-design:
 
-
-.. role:: electrum(code)
-   :language: electrum
-
 **************************
 Protocol design
 **************************
@@ -652,9 +648,9 @@ leader.
    
 .. card-carousel:: 2
 
-   .. card:: Frame conditions
+   .. card:: Pointwise effects
       :link-type: ref
-      :link: frame-conditions
+      :link: pointwise-effects
 
       :octicon:`link` Further reading
       ^^^

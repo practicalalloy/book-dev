@@ -3,13 +3,27 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+:hide-toc:
+
 Practical Alloy
 ==============================================
 
 A hands-on guide to formal software design
 ------------------------------------------
 
-This book is an introduction to formal software specification and analysis with `Alloy 6 <https://alloytools.org>`_. In this (latest) version, Alloy already allows the specification of behavioural designs with mutable relations and temporal logic, an extension previously implemented in `Electrum <http://haslab.github.io/Electrum/>`_.
+|
+|
+
+This book is an introduction to formal software design with `Alloy <https://alloytools.org>`_.
+
+A key activity in design is to develop models of the software system to be later implemented. These models are abstractions that allow us to quickly explore design alternatives.
+
+Alloy is a formal modeling language that can be used to describe complex mutable software structures using simple mathematical concepts. The Alloy Analyzer supports both automatic model validation and verification of expected requirements, making Alloy one of the most cost-effective formal design frameworks nowadays. 
+
+This book starts by presenting the basics of both structural and behavioral modeling with Alloy, and then explores its application in the formal design of different kinds of software systems, ranging from user facing apps to distributed protocols.
+
+The presentation of the different concepts is always illustrated with practical examples, making this book a hands-on guide to learn formal software design with Alloy.
+
 
 .. toctree::
    :maxdepth: 2
@@ -26,9 +40,9 @@ This book is an introduction to formal software specification and analysis with 
    :hidden:
 
    chapters/structural-modeling/index
-   chapters/structural-topics/index
+   Advanced topics <chapters/structural-topics/index>
    chapters/behavioral-modeling/index
-   chapters/behavioral-topics/index
+   Advanced topics <chapters/behavioral-topics/index>
 
 .. toctree::
    :hidden:

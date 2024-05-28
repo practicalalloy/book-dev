@@ -1,36 +1,47 @@
 ****************************************
-Introduction
+About Alloy
 ****************************************
 
-.. warning::
+Alloy is a formal modeling language proposed by `Daniel Jackson <http://people.csail.mit.edu/dnj/>`_ at MIT in the late 90s.
+Initially is was mainly tailored at describing software structures, but the latest Alloy 6 version also directly supports behavioral design. Alloy 6 is the version of Alloy used in this book.
 
-   This chapter is still WIP for the version of the book.
+Installing Alloy
+================
 
-.. _alloy-versions:
+Alloy models can be automatically analyzed with a tool called Alloy Analyzer that can be downloaded `here <https://alloytools.org/download.html>`_. The Analyzer is implemented in Java and for most platforms the downloaded `jar` can be directly executed. For Mac OS a `dmg` installer is also available.
+
+You can also try Alloy online in the `Alloy4Fun <http://alloy4fun.inesctec.pt>`_ web application. This online version allows the easy sharing of models with permalinks, and can also be used to share specification challenges in educational concepts, but has some limitations when compared to the standalone Analyzer, namely in the validation of behavioral specifications. To learn more about how to use Alloy4Fun in education read `Experiences on teaching alloy with an automated assessment platform <https://doi.org/10.1016/j.scico.2021.102690>`_ [SCP21]_.
 
 Alloy versions
 ====================
 
-
 The main difference of Alloy 6, when compared to previous versions
-of Alloy, is precisely the possibility of declaring mutable sets
-and relations.  The reader may wonder if the previous versions of
-Alloy, where all signatures and relations are immutable, were in
+of Alloy, is native support for behavioral design, namely the possibility of declaring mutable structures.  The reader may wonder if the previous Alloy 5 version, where all structures were immutable, was in
 any way useful. In fact, in many software systems the main design
-problem concerns just structural aspects, for example, eliciting
-requirements about the data structures. We will gave an example of
-this in the :ref:`structural-modeling` chapter. Moreover, it was still
-possible to reason about behavior with Alloy 5, by explicitly
+problem concerns just structural aspects. This books starts precisely by explaining how Alloy can be used for structural design (in the :ref:`structural-modeling` chapter). 
+
+With Alloy 5 it was still
+possible to reason about behavior, by explicitly
 specifying the notion of time and of execution traces. However,
 this was often a rather time-consuming and error-prone task. The
 `Electrum <http://haslab.github.io/Electrum/>`_ extension [FSE16]_ [ASE18]_ was
 proposed precisely to address this shortcoming. Electrum added an
 implicit notion of time, allowed the declaration of mutable
-signatures and relations, and the specification of properties with
+structures, and the specification of properties with
 temporal logic. With Alloy 6, these extensions became a standard
-part of Alloy. For an overview of Alloy 5 check
+part of Alloy. 
+
+For an overview of Alloy 5 check
 `Alloy: A Language and Tool for Exploring Software Designs
 <https://cacm.acm.org/magazines/2019/9/238969-alloy/fulltext>`_
 [CACM19]_ by Daniel Jackson or his excellent book `Software Abstractions: Logic, Language, and Analysis <https://mitpress.mit.edu/books/software-abstractions-revised-edition>`_ [MIT12]_.
 
-.. todo:: Add brief historical note, talk about other dynamic extensions.
+Alloy extensions
+=================
+
+Many extensions of Alloy were proposed in the past, that are still not part of Alloy 6. To try them out you should download the respective versions of the Analyzer. Note that most of these extensions were of Alloy 5, so they still do not support the behavioral specification constructs of Alloy 6. Here is a non-exhaustive list of those extensions:
+
+- `Alloy* <https://aleksandarmilicevic.github.io/hola/>`_, an extension that supports the specification and analysis of higher-order constraints, and that can be used, for example, to implement program synthesis.
+- `AlloyMax <https://github.com/cmu-soda/AlloyMax>`_, an extension that supports the specification and analysis of problems with optimal solutions.
+
+.. todo:: Add more extensions and refs to the papers.
