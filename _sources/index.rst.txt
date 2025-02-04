@@ -11,16 +11,16 @@ Practical Alloy
 A hands-on guide to formal software design
 ------------------------------------------
 
-|
-|
+.. image:: cover.jpg
+   :width: 450 px 
 
 This book is an introduction to formal software design with `Alloy <https://alloytools.org>`_.
 
-A key activity in design is to develop models of the software system to be later implemented. These models are abstractions that allow us to quickly explore design alternatives.
+A key activity in design is to develop models of the software system to be implemented. Models are abstractions that allow us to quickly explore design alternatives and help us reason about the expected requirements.
 
 Alloy is a formal modeling language that can be used to describe complex mutable software structures using simple mathematical concepts. The Alloy Analyzer supports both automatic model validation and verification of expected requirements, making Alloy one of the most cost-effective formal design frameworks nowadays. 
 
-This book starts by presenting the basics of both structural and behavioral modeling with Alloy, and then explores its application in the formal design of different kinds of software systems, ranging from user facing apps to distributed protocols.
+This book starts by presenting the basics of both structural and behavioral modeling with Alloy, and then explores its application in the formal design of different kinds of software systems, ranging from simple user apps to distributed protocols.
 
 The presentation of the different concepts is always illustrated with practical examples, making this book a hands-on guide to learn formal software design with Alloy.
 
