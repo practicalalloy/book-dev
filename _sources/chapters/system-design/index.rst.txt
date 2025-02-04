@@ -1,0 +1,13 @@
+.. _system-design:
+
+Controller design
+****************************************
+
+Modeling the environment
+========================
+
+Specifying state-machines
+=========================
+
+Incorporating variability in the design
+=======================================
