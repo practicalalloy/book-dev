@@ -58,4 +58,4 @@ Many extensions of Alloy were proposed in the past, that are not part of Alloy 6
 - `Alloy* <https://aleksandarmilicevic.github.io/hola/>`_, an extension that supports the specification and analysis of higher-order constraints, and that can be used, for example, to implement program synthesis [FMSD19]_.
 - `AlloyMax <https://github.com/cmu-soda/AlloyMax>`_, an extension that supports the specification and analysis of problems with optimal solutions [FSE21]_.
 - `DynAlloy <https://sites.google.com/site/dynalloy/home>`_, an extension for the specification of behavioral models using an idiom inspired by dynamic logic [FSE17]_.
-- `QAlloy <https://github.com/pf7/QAlloy>`_, an extension for the specification of quantitative requirements [FSE22]_.
+- `QAlloy <https://github.com/pf7/QAlloy>`_, an extension for the specification and analysis of quantitative requirements [FSE22]_.

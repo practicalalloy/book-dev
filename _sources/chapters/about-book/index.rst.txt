@@ -33,7 +33,7 @@ About the authors
 
 `Alcino Cunha <https://alcinocunha.github.io>`_ is an Associate Professor at the University of Minho and also member of the High-Assurance Software Laboratory of INESC TEC. His research aims to make formal software design more accessible for all software engineers. Together with the other authors of this book, he developed the new version 6 of Alloy, as well as several other extensions. He was also involved in the development of `Alloy4Fun <http://alloy4fun.inesctec.pt>`_, a web application for sharing and learning Alloy. In the past 15 years he has taught many courses about Alloy, mainly to master students at University of Minho, but also to researchers at summer schools and conferences, and practitioners in industry.
 
-`Nuno Macedo <https://nmacedo.github.io/>`_ is an Assistant Professor at the Faculty of Engineering of the University of Porto and a member of the High-Assurance Software Laboratory of INESC TEC. 
+`Nuno Macedo <https://nmacedo.github.io/>`_ is an Assistant Professor at the Faculty of Engineering of the University of Porto and a member of the High-Assurance Software Laboratory of INESC TEC. He has a long experience on researching lightweight formal software development methods, having developed several extensions to Alloy and its Analyzer, often in collaboration with other authors of this book, and is one of the main developers of the current Alloy Analyzer. He has been teaching Alloy at the graduate level for several years, and is one of the developers of the `Alloy4Fun <http://alloy4fun.inesctec.pt>`_ platform for learning Alloy. He has also applied Alloy in knowledge transfer projects.
 
 Julien Brunel
 
