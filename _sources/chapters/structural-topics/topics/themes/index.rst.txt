@@ -85,7 +85,7 @@ Another common customization is to give different colors (or different shapes an
 
 .. todo::
 
-   mention color-blind palette
+   @david: mention color-blind palette
 
 .. image:: theme3.png
    :width: 700 px

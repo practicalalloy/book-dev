@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="article:modified_time" content="2024-06-20T17:37:54+01:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="App design" href="../app-design/index.html" /><link rel="prev" title="Sequences" href="../behavioral-topics/topics/sequences/index.html" />
+    <meta property="article:modified_time" content="2025-02-04T10:43:06+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Bibliography" href="../../bibliography.html" /><link rel="prev" title="Sequences" href="../behavioral-topics/topics/sequences/index.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Protocol design - Practical Alloy</title>
@@ -251,9 +251,6 @@
 <p class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Protocol design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../app-design/index.html">App design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interaction-design/index.html">Interaction design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../system-design/index.html">Controller design</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul>
@@ -322,22 +319,6 @@ we will start by omitting this second last phase of the protocol and will only b
 with the fundamental property of a leader election protocol:
 eventually exactly one node will designate itself as the
 leader.</p>
-<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-2 docutils">
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Example 1</div>
-<p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-book" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"></path></svg> Required reading</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="../structural-topics/topics/relational-logic/index.html#relational-logic"><span class="std std-ref">tocdepth</span></a></div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Example 2</div>
-<p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-book" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"></path></svg> Required reading</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference internal" href="../structural-topics/topics/integers/index.html#integers"><span class="std std-ref">Working with integers</span></a></div>
-</div>
 <section id="specifying-the-network-configuration">
 <h2>Specifying the network configuration<a class="headerlink" href="#specifying-the-network-configuration" title="Link to this heading">¶</a></h2>
 <p id="index-1">When designing a distributed protocol, we should start by specifying
@@ -1718,10 +1699,6 @@ Higher-arity relations</div>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="../structural-topics/topics/nary-relations/index.html#nary-relations"><span class="std std-ref">Higher-arity relations</span></a></div>
 </div>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>add discussion about unbounded and decomposed model checking (few configs)</p>
-</div>
 </section>
 <section id="refining-the-network-model">
 <h2>Refining the network model<a class="headerlink" href="#refining-the-network-model" title="Link to this heading">¶</a></h2>
@@ -1804,12 +1781,12 @@ Sequences</div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../app-design/index.html">
+          <a class="next-page" href="../../bibliography.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">App design</div>
+                <div class="title">Bibliography</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -1834,7 +1811,7 @@ Sequences</div>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 20, 2024</div>
+              Last updated on Feb 04, 2025</div>
           </div>
           <div class="right-details">
             

@@ -33,21 +33,6 @@ with the fundamental property of a leader election protocol:
 eventually exactly one node will designate itself as the
 leader.
 
-.. card-carousel:: 2
-
-   .. card:: Example 1
-      :link-type: ref
-      :link: relational-logic
-
-      :octicon:`book` Required reading
-
-   .. card:: Example 2
-      :link-type: ref
-      :link: integers   
-
-      :octicon:`book` Required reading
-
-
 Specifying the network configuration
 ====================================
 
@@ -1801,10 +1786,6 @@ Using tuples to direct represent messages has many advantages as we have seen. U
       :octicon:`beaker` Further reading
       ^^^
       In this section we used higher-arity fields to model inboxes. Learn how to use them.
-
-.. todo::
-
-  add discussion about unbounded and decomposed model checking (few configs)
 
 Refining the network model
 ======================================

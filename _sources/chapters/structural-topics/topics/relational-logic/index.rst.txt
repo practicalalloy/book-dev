@@ -212,9 +212,6 @@ Alloy's rule that everything is a relation also applies to quantified variables:
 
 It is also possible to quantify more than one variable at once, as in :alloy:`all x, y : A | P` or :alloy:`all x : A, y : B | P`. In the latter, the expression :alloy:`B` can also refer to the first quantified variable :alloy:`x`. It is  also possible to add keyword :alloy:`disj` to quantify over all different values of the bound variables. For example, writing :alloy:`all disj x, y : A | P` abbreviates :alloy:`all x, y : A | x != y implies P`. Note that the `disj` keyword only applies to groups of variables quantified over the same set. This means that in formula `all disj x, y : A , w, z : B | P`, `w` and `z` may take the same value (but not `x` and `y`). Also, be aware that although these multi-variable quantifications are equivalent to their expansion for `all` and `some`, that is not the case for `one`, `lone` and `no`. For example, consider formulas `one x, y : A | x->y in r` and `one x : A | one y : A | x in r`, and let `r = {(A0,A0),(A0,A1),(A1,A0)}`. The former formula is false because there are three tuples in `r`. However, the latter is true because there is exactly one `x` (`A1`) for which there is exactly one `y` (`A0`) in `r`.
 
-.. todo::
-  * translation of lone one no
-
 .. index::
    function
 

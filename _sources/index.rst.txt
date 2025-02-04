@@ -54,17 +54,6 @@ The presentation of the different concepts is always illustrated with practical 
    chapters/interaction-design/index
    chapters/system-design/index
 
-.. .. toctree::
-..    :maxdepth: 2
-..    :caption: Old version
-.. 
-..    old-source/overview/index
-..    old-source/structural-design/index
-..    old-source/protocol-design/index
-..    old-source/modelling-tips/index
-..    old-source/relational-logic/index
-..    old-source/temporal-logic/index
-
 .. toctree::
    :hidden:
    :maxdepth: 2

@@ -1049,7 +1049,7 @@ This expression can be specified using any of the relational operators presented
 
 .. todo::
 
-  introduce let expression as `let children = entries.object`
+  @alcino: introduce let expression as `let children = entries.object`
 
 
 .. index::
