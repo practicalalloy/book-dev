@@ -8,11 +8,11 @@ Structural modeling
    file system example
 
 This chapter explains how Alloy can be used for structural modeling. As running example we will explore the design of a file system.
-The goal of the chapter is to introduce the
-key concepts of Alloy,  so our model will be
+The main goal of the chapter is to introduce the
+key concepts of Alloy, so our model will be
 purposely simple, a very high-level abstraction of a real file
 system. We will focus only on the
-structural aspects of the design, namely our main goal is to describe how files and directories are
+structural aspects of the design, namely on describing how files and directories are
 organized. Behavioral modeling will be the focus of the next chapter. 
 Given the high level of abstraction, our specification will resemble a domain model, formally describing the key file system entities and their relationships.
 Another goal of this design exploration is to
@@ -34,7 +34,7 @@ Signature declaration
    field
    sig keyword
 
-In Alloy entities can be declared with *signatures*.  A signature is just a set that groups together some elements of the domain.
+In Alloy entities can be declared with *signatures*.  A signature is just a set that groups together some elements of the domain of discourse.
 In this case we will declare signatures to capture the two key entities in a file
 system: directories and files. 
 Since both files and directories share some common
@@ -123,7 +123,7 @@ After clicking *Instance*, the following instance is opened in the visualizer.
 .. image:: instance1.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_1_2/filesystem.als#L10-L17
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_01_02/filesystem.als#L18-L24
    :alt: Get the code to generate this instance.
 
 .. index::
@@ -132,12 +132,12 @@ After clicking *Instance*, the following instance is opened in the visualizer.
    instance; visualization
    Show New Solution menu option
 
-Another distinguishing feature of Alloy is that the instances returned by the analysis commands are, by default, depicted graphically as graph-like structures in a pop-up window: atoms belonging to the different signatures are nodes (depicted as boxes by default) and associations between atoms are edges (depicted as arrows). In this instance we have two objects, one of them is a directory and the other a file. We can ask the Analyzer to generate a different instance, by pressing :guilabel:`New` in the visualizer toolbar, or selecting menu option :menuselection:`Instance --> Show New Solution` (shortcut :kbd:`cmd-n`). As mentioned before, atoms have no intrinsic semantics. In particular, the names the Analyzer generates for them are meaningless: :alloy:`Object0` isn't the name of a particular file existing in a real-world file system, but just a name to help us distinguish it from other elements in the domain. As such, two instances that only differ in the names of the atoms are in fact the same instance (they are isomorphic up to atom renaming), and showing both to the user would just encumber the understanding of the specification. To avoid this, and also to speed up analysis, the Analyzer implements a powerful *symmetry breaking* mechanism that excludes from the analysis most isomorphic (i.e., symmetric) instances. This feature is also very convenient for validation, as we can quickly see many truly different instances of our model. For example, after pressing :guilabel:`New` we could get the following instance. Re-enforcing the fact that name are meaningless, if there is a single atom in a signature it is not numbered.
+Another distinguishing feature of Alloy is that the instances returned by the analysis commands are, by default, depicted graphically as graph-like structures in a pop-up window, just as the one above: atoms belonging to the different signatures are nodes (depicted as boxes by default) and associations between atoms are edges (depicted as arrows). In this instance we have two objects, one of them is a directory and the other a file. We can ask the Analyzer to generate a different instance, by pressing :guilabel:`New` in the visualizer toolbar, or selecting menu option :menuselection:`Instance --> Show New Solution` (shortcut :kbd:`cmd-n`). As mentioned before, atoms have no intrinsic semantics. In particular, the names the Analyzer generates for them are meaningless: :alloy:`Object0` isn't the name of a particular file existing in a real-world file system, but just a name to help us distinguish it from other elements in the domain. As such, two instances that only differ in the names of the atoms are in fact the same instance (they are isomorphic up to atom renaming), and showing both to the user would just encumber the understanding of the specification. To avoid this, and also to speed up analysis, the Analyzer implements a powerful *symmetry breaking* mechanism that excludes from the analysis most isomorphic (i.e., symmetric) instances. This feature is also very convenient for validation, as we can quickly see many truly different instances of our model. For example, after pressing :guilabel:`New` we could get the following instance. Re-enforcing the fact that name are meaningless, if there is a single atom in a signature it is not numbered in the visualization by default.
 
 .. image:: instance2.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_1_2/filesystem.als#L19-L26
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_01_02/filesystem.als#L26-L32
    :alt: Get the code to generate this instance.
 
 .. index::
@@ -194,7 +194,7 @@ that is neither a file nor a directory.
 .. image:: instance3.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_3/filesystem.als#L9-L16
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_03/filesystem.als#L18-L24
    :alt: Get the code to generate this instance.
 
 .. index::
@@ -228,7 +228,7 @@ multiplicities that can be used in a signature declaration:
 :alloy:`some` forces the signature to always have some atoms;
 :alloy:`lone` restricts the signature to have at most one atom; and
 :alloy:`one` restricts the signature to have exactly one atom. To denote the root directory, we can declare  a
-signature :alloy:`Root`  extending :alloy:`Root` with multiplicity :alloy:`one`.
+signature :alloy:`Root` extending :alloy:`Dir` with multiplicity :alloy:`one`.
 
 .. code-block::
 
@@ -244,7 +244,7 @@ directories, one of them being (necessarily, due to multiplicity :alloy:`one`) t
 .. image:: instance4.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_4_5/filesystem.als#L17-L24
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_04_05/filesystem.als#L28-L34
    :alt: Get the code to generate this instance.
 
 Objects inside directories have an associated name, so we will need a
@@ -267,7 +267,7 @@ of which is the root.
 .. image:: instance5.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_4_5/filesystem.als#L26-L35
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_04_05/filesystem.als#L36-L44
    :alt: Get the code to generate this instance.
 
 .. index::
@@ -313,7 +313,7 @@ set a different scope.
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-modeling/signature-declaration
+      :link: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/signature-declaration/
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -403,7 +403,7 @@ By executing it, we could now get the following instance.
 .. image:: instance6.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_6/filesystem.als#L19-L29
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_06/filesystem.als#L28-L37
    :alt: Get the code to generate this instance.
 
 .. index::
@@ -460,7 +460,7 @@ After executing this command we could get the following instance.
 .. image:: instance7.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_7_8/filesystem.als#L23-L35
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_07_08/filesystem.als#L32-L43
    :alt: Get the code to generate this instance.
 
 .. index::
@@ -479,13 +479,13 @@ instance will be depicted as follows.
 .. image:: instance8.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_7_8/filesystem.als#L37-L49
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_07_08/filesystem.als#L45-L56
    :alt: Get the code to generate this instance.
 
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-modeling/field-declaration
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/field-declaration
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -523,8 +523,8 @@ in our specification of a file system, namely it currently allows:
 
 * Shared entries between directories (entry :alloy:`Entry3` belongs both to :alloy:`Dir` and :alloy:`Root`).
 * Different entries in the same directory with the same name (all entries inside :alloy:`Dir` have the same name :alloy:`Name`).
-* The same directory appears in more than one entry (:alloy:`Dir` is the object of all entries).
-* A dangling file that does not belong to an entry (:alloy:`File`).
+* The same directory to appear in more than one entry (:alloy:`Dir` is the object of all entries).
+* Dangling files that do not belong to any entry (:alloy:`File`).
 
 .. index::
    fact
@@ -602,7 +602,7 @@ Using plain first-order logic, this fact would have to be written with a more ve
      all x : Object | x in Dir or x in File
    }
 
-Of course, this fact is redundant, since it is a consequence of :alloy:`Dir` and :alloy:`File` being extensions of the abstract signature :alloy:`Object`. However, it illustrates an important point about Alloy's motto that "everything is a relation". In Alloy, the operator :alloy:`in` is the standard subset or equal operator of set theory and not the membership test. A formula like :alloy:`x in Dir` is allowed, because in Alloy every expression denotes a relation (a set of tuples). In particular, quantified variables are also relations, namely singleton sets with a unary tuple containing a single atom drawn from the range of the quantifier. When :alloy:`x` is such a singleton set, an inclusion check like :alloy:`x in Dir` actually performs a membership check. This is an example of how the above motto enables the simplification of the syntax and semantics of the language, since there is no need for a different operator for membership check.
+Of course, this fact is redundant, since it is a consequence of signature :alloy:`Object` being abstract and extended by :alloy:`Dir` and :alloy:`File`. However, it illustrates an important point about Alloy's motto that "everything is a relation". In Alloy, the operator :alloy:`in` is the standard subset or equal operator of set theory and not the membership test. A formula like :alloy:`x in Dir` is allowed, because in Alloy every expression denotes a relation (a set of tuples). In particular, quantified variables are also relations, namely singleton sets with a unary tuple containing a single atom drawn from the range of the quantifier. When :alloy:`x` is such a singleton set, an inclusion check like :alloy:`x in Dir` actually performs a membership check. This is an example of how the above motto enables the simplification of the syntax and semantics of the language, since there is no need for a different operator for membership check.
 
 .. index::
    . (dot-join)
@@ -648,10 +648,10 @@ side: for example, :alloy:`entries.Entry` is the set of all directories
 that contain some entry.
 Compositions can also be chained to obtain atoms that are somehow
 indirectly related. For example, :alloy:`d.entries.object` denotes the
-set of all file system objects that are contained in the entries of
+set of all file system objects that are contained in some entry of
 directory :alloy:`d`. And again, it is possible to navigate backwards
 through a chain of compositions. For example, :alloy:`entries.object.d`
-denotes the set of all directories with entries that point to directory
+denotes the set of all directories that have some entry that points to directory
 :alloy:`d`.
 
 Using :alloy:`.` we can now declare a fact that prevents the first
@@ -673,7 +673,7 @@ directories :alloy:`x` and :alloy:`y`.
 .. index::
    disj keyword
 
-The need to quantify over two ore more different variables is very
+The need to quantify over two or more different variables is very
 common, so Alloy provides the modifier :alloy:`disj`, that can be added
 between a quantifier and the variables, precisely to restrict those
 variables to be different. This modifier simplifies the formulas,
@@ -753,7 +753,7 @@ enforce that this set is equal the set of all objects minus the root.
 .. code-block::
 
    fact no_dangling_objects {
-     // Every object except the root is contained somewhere
+     // Every object except the root is contained in some entry
      Entry.object = Object - Root
    }
 
@@ -764,7 +764,7 @@ seem to be gone. However, we will still get instances such as the following.
 .. image:: instance9.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/d0449860a717e8169e96139cfe041a20dfa7209f/structural-modeling/instance_9/filesystem.als#L49-L61
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_09/filesystem.als#L57-L68
    :alt: Get the code to generate this instance.
 
 This instance makes clear two additional issues in our model (the second
@@ -808,7 +808,7 @@ the file system contains no partitions.
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-modeling/specifying-constraints
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/specifying-constraints
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -951,7 +951,7 @@ all formulas of relational logic to this style in Alloy.
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-modeling/a-question-of-style
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/a-question-of-style
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -1089,7 +1089,7 @@ Unfortunately, executing this command reveals a counter-example.
 .. image:: instance10.png
    :width: 400 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/d0449860a717e8169e96139cfe041a20dfa7209f/structural-modeling/instance_10/filesystem.als#L69-L81
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_10/filesystem.als#L72-L83
    :alt: Get the code to generate this instance.
 
 The problem is that we have two directories that contain each
@@ -1141,7 +1141,7 @@ consistent and admits non-trivial file systems.
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-modeling/verifying-assertions
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/verifying-assertions
 
       :octicon:`file-badge` Alloy model 
       ^^^

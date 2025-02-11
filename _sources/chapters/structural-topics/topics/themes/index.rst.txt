@@ -81,15 +81,13 @@ and then tick the :guilabel:`Show` option twice to choose the
    Node Color Palette option
    Edge Color Palette option
 
-Another common customization is to give different colors (or different shapes and borders) to atoms belonging to different signatures. First, we will select a different color palette, with more subdue colors. First select the :guilabel:`general graph settings`, and select the :guilabel:`Martha` palette both for node and edge colors. After pressing :guilabel:`Apply` we will get some nice faded colors.
-
-.. todo::
-
-   @david: mention color-blind palette
+Another common customization is to give different colors (or different shapes and borders) to atoms belonging to different signatures. First, we will select a different color palette, with more subdued colors. To do so, select the :guilabel:`general graph settings`, and then select the :guilabel:`Martha` palette both for node and edge colors. After pressing :guilabel:`Apply` we will get some nice faded colors.
 
 .. image:: theme3.png
    :width: 700 px
    :align: center
+
+Notice that since version 6.2 of Alloy, the visualizer features a colorblind-friendly palette called :guilabel:`Tol`, inspired by (but not completely equivalent to) one of Paul Tol's `color schemes <https://personal.sron.nl/~pault/>`_.
 
 Since entries are auxiliary structures in defining the (supposedly) tree-like structure of the file system, we will paint them gray. To do so select signature :alloy:`Entry`, then the color :guilabel:`Gray` in the drop-down menu in the top left-hand corner, and finally :guilabel:`Apply`.
 
@@ -97,13 +95,13 @@ Since entries are auxiliary structures in defining the (supposedly) tree-like st
    :width: 700 px
    :align: center
 
-For file system objects we will choose a more eye-catching red color. We don't have to set this color separately for signatures :alloy:`Dir`, :alloy:`Root` and :alloy:`File`. By default most theme options of extension signatures are set as :guilabel:`Inherited` from their parent signature. As such, it suffices to set the color red for the :alloy:`Object` signature, and both their children will inherit this setting. You also have the option to set the color to :guilabel:`Magic`, which will assign a different color to each extension signature, instead of the default yellow. That is actually the default setting for the color of edges, as can be seen in the color of `entries` and `object`. Finally we will choose different shapes for different file system objects. Let's keep files as rectangles, but choose the shape :guilabel:`Trapezoid` for directories and a :guilabel:`House` for the root. The shape can be chosen in the drop-down menu in the top right-hand corner. The combo-box to the left of that one changes the style of the border. After pressing :guilabel:`Apply` we have the following visualization.
+For file system objects we will choose a more eye-catching red color. We don't have to set this color separately for signatures :alloy:`Dir`, :alloy:`Root` and :alloy:`File`. By default most theme options of extension signatures are set as :guilabel:`Inherited` from their parent signature. As such, it suffices to set the color red for the :alloy:`Object` signature, and both their children will inherit this setting. You also have the option to set the color to :guilabel:`Magic`, which will assign a different color to each extension signature, instead of the default yellow. That is actually the default setting for the color of edges, as you can see by the colors of `entries` and `object`. Finally we will choose different shapes for different file system objects. Let's keep files as rectangles, but choose the shape :guilabel:`Trapezoid` for directories and a :guilabel:`House` for the root. The shape can be chosen in the drop-down menu in the top right-hand corner. The combo-box to the left of that one allows changing the style of the border. After pressing :guilabel:`Apply` we have the following visualization.
 
 .. image:: theme5.png
    :width: 700 px
    :align: center
 
-One last customization that is often useful is to change the label of an element in the graph, be it a signature, a subset or relation (for instance, to make it shorter, or to remove the namespace prepended to elements from other modules). This can be changed in the text box in the top left-hand corner after selecting an element.
+One last customization that is often useful is to change the label of an element in the graph, be it a signature, a subset or relation (for instance, to make it shorter, or to remove the namespace prepended to elements from imported modules). This can be changed in the text box in the top left-hand corner after selecting an element.
 
 .. card-carousel:: 2
 
@@ -264,7 +262,7 @@ depiction is shown below, where the names of the objects inside directories can 
 
       :octicon:`beaker` Further reading
       ^^^
-      Sometimes we can have :code:`$` prefixed atoms in a visualization that are do not correspond to any of the declared derived functions. Learn how such Skolemized variables were introduced by the model finding analysis technique.  
+      Sometimes we can have :code:`$` prefixed atoms in a visualization that  do not correspond to a declared derived function. Learn how such Skolemized variables were introduced by the model finding analysis technique.  
 
 .. index::
    Viz button
@@ -281,7 +279,7 @@ chapter. In the visualizer toolbar, buttons :guilabel:`Viz`, :guilabel:`Txt`,
 :guilabel:`Table`, and :guilabel:`Tree` control the representation of the
 instance. Option :guilabel:`Viz` is the default graph representation, while the
 other 3 are textual representations of the relations in plain text, tabular
-format, and in hierarchical structure. For illustration purposes, below is the
+format, and in hierarchical structure, respectively. For illustration purposes, below is the
 representation of the same instance in tabular format, where each table denotes
 a signature and the associated fields. Despite the usefulness of the graph
 visualization, when instances become too complex these simpler representations

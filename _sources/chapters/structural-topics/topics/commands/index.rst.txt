@@ -29,7 +29,7 @@ Alternative command syntaxes
 Both :alloy:`run` and :alloy:`check` commands can take two different syntaxes. In the first commands have an optional label and a constraint to be enforced/checked
 between braces. Between the braces any arbitrary constraint can be written. In the :ref:`structural-modeling` chapter we have defined :alloy:`run` commands of this shape, but this could
 also be done for :alloy:`check` commands. For instance, below is a
-:alloy:`check` command equivalent to the one defined in the :ref:`structural-modeling`  chapter to check that the file system has no partitions.
+:alloy:`check` command equivalent to the one defined in the :ref:`structural-modeling`  chapter to check that the file system has no partitions, given as a contraint in the command rather than defined in an `assert`.
 
 .. code-block::
 
@@ -59,7 +59,7 @@ scopes for `File`. We could do something like the following.
   run depth2 for 4 but 2 File
 
 An interesting feature of this kind of commands is that, if you :alloy:`run` a
-predicate with parametrized parameters, they will be automatically quantified and show an
+predicate with parameters, they will be automatically quantified and show an
 instance for which there is some atom that makes the predicate true. For
 instance, let us define a predicate that tests whether a directory is empty, and
 then ask for instances where there is some empty directory.
@@ -88,7 +88,7 @@ now also part of the generated instance and can be depicted.
 .. image:: instance1.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/62cbcb217e3495a3a4e1bb698c06a8ee70df8de3/structural-topics/commands/instance_1/filesystem.als#L81-L94
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/commands/instance_01/filesystem.als#L92-L104
    :alt: Get the code to generate this instance.
    
 Although less common, :alloy:`run` commands can also call a function rather than a predicate. In that case Alloy will search for input variables for which the function is well defined (i.e., it returns a value within its return type).
@@ -102,11 +102,20 @@ Note that once you specify a constraint in the command, you are no longer callin
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/commands/alternative-command-syntaxes
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/commands/alternative-command-syntaxes
 
       :octicon:`file-badge` Alloy model 
       ^^^
       Download and explore the files relevant for the model at this point of the book.
+
+   .. card:: Model finding
+     :link-type: ref
+     :link: analysis   
+
+     :octicon:`beaker` Further reading
+     ^^^
+     Learn more about the Skolemization process employed by the Analyzer when executing commands.
+
 
 Controlling scopes
 ------------------
@@ -218,7 +227,7 @@ following command guarantees that there exist exactly 2 files in every instance.
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/commands/controlling-scopes
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/commands/controlling-scopes
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -298,7 +307,7 @@ report the results as follows.
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/commands/documenting-expected-outcomes
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/commands/documenting-expected-outcomes
 
       :octicon:`file-badge` Alloy model 
       ^^^

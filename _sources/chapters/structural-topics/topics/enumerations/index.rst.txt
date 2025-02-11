@@ -49,7 +49,7 @@ enumerated data types is so common that Alloy has a keyword
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/enumerations/declaring-enumeration-signatures
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/enumerations/declaring-enumeration-signatures
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -73,13 +73,13 @@ Here, each of the 3 fields determines the permissions assigned to a scope. Runni
 .. image:: instance1.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/959388595b64304f89ddba2c897150a829c079c8/structural-topics/enumerations/instance_1/filesystem.als#L76-L91
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/enumerations/instance_01/filesystem.als#L79-L93
    :alt: Get the code to generate this instance.
 
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/enumerations/using-enumeration-signatures
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/enumerations/using-enumeration-signatures
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -136,21 +136,21 @@ customizations).
 .. image:: instance2.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/959388595b64304f89ddba2c897150a829c079c8/structural-topics/enumerations/instance_2/filesystem.als#L90-L106
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/enumerations/instance_02/filesystem.als#L94-L110
    :alt: Get the code to generate this instance.
    
 Yet another alternative encoding that would address both the maintainability and
-scope issues could be to define the permissions using a *ternary* relation. You can learn how to declare and use such higher arity relations in another advanced topic linked below.
+scope issues could be to define the permissions using a *ternary* relation. The declaration and use of such higher arity relations are addressed in another advanced topic.
 
 There is just a subtle difference between declaring enumeration signatures with
 keyword :alloy:`enum` and declaring them with singleton extensions as we did initially: the former additionally imposes a *total order* between the
 respective atoms, corresponding to the order in which they are declared inside
-the braces. Total orders in Alloy are also explored in a separate advanced topic that is linked below.
+the braces. Total orders in Alloy are also explored in a separate advanced topic.
 
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/enumerations/an-alternative-encoding
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/enumerations/an-alternative-encoding
 
       :octicon:`file-badge` Alloy model 
       ^^^

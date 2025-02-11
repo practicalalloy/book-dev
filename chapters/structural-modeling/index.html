@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="article:modified_time" content="2025-02-04T10:43:06+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Structural modelling advanced topics" href="../structural-topics/index.html" /><link rel="prev" title="About this book" href="../about-book/index.html" />
+    <meta property="article:modified_time" content="2025-02-10T21:07:26+00:00" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Structural modelling advanced topics" href="../structural-topics/index.html" /><link rel="prev" title="About this book" href="../about-book/index.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Structural modeling - Practical Alloy</title>
@@ -299,11 +299,11 @@
           <section id="structural-modeling">
 <span id="id1"></span><h1>Structural modeling<a class="headerlink" href="#structural-modeling" title="Link to this heading">¶</a></h1>
 <p id="index-0">This chapter explains how Alloy can be used for structural modeling. As running example we will explore the design of a file system.
-The goal of the chapter is to introduce the
-key concepts of Alloy,  so our model will be
+The main goal of the chapter is to introduce the
+key concepts of Alloy, so our model will be
 purposely simple, a very high-level abstraction of a real file
 system. We will focus only on the
-structural aspects of the design, namely our main goal is to describe how files and directories are
+structural aspects of the design, namely on describing how files and directories are
 organized. Behavioral modeling will be the focus of the next chapter.
 Given the high level of abstraction, our specification will resemble a domain model, formally describing the key file system entities and their relationships.
 Another goal of this design exploration is to
@@ -316,7 +316,7 @@ partitions occur in the file system, meaning
 that all files and directories are accessible from the root directory.</p>
 <section id="signature-declaration">
 <h2>Signature declaration<a class="headerlink" href="#signature-declaration" title="Link to this heading">¶</a></h2>
-<p id="index-1">In Alloy entities can be declared with <em>signatures</em>.  A signature is just a set that groups together some elements of the domain.
+<p id="index-1">In Alloy entities can be declared with <em>signatures</em>.  A signature is just a set that groups together some elements of the domain of discourse.
 In this case we will declare signatures to capture the two key entities in a file
 system: directories and files.
 Since both files and directories share some common
@@ -366,10 +366,10 @@ get the following message.</p>
 <a class="reference internal image-reference" href="../../_images/log12.png"><img alt="../../_images/log12.png" class="align-center" src="../../_images/log12.png" style="width: 500px;" />
 </a>
 <p>After clicking <em>Instance</em>, the following instance is opened in the visualizer.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_1_2/filesystem.als#L10-L17"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance116.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_01_02/filesystem.als#L18-L24"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance116.png" style="width: 500px;" />
 </a>
-<p id="index-6">Another distinguishing feature of Alloy is that the instances returned by the analysis commands are, by default, depicted graphically as graph-like structures in a pop-up window: atoms belonging to the different signatures are nodes (depicted as boxes by default) and associations between atoms are edges (depicted as arrows). In this instance we have two objects, one of them is a directory and the other a file. We can ask the Analyzer to generate a different instance, by pressing <span class="guilabel">New</span> in the visualizer toolbar, or selecting menu option <span class="menuselection">Instance ‣ Show New Solution</span> (shortcut <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>-<kbd class="kbd docutils literal notranslate">n</kbd></kbd>). As mentioned before, atoms have no intrinsic semantics. In particular, the names the Analyzer generates for them are meaningless: <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object0</span></code> isn’t the name of a particular file existing in a real-world file system, but just a name to help us distinguish it from other elements in the domain. As such, two instances that only differ in the names of the atoms are in fact the same instance (they are isomorphic up to atom renaming), and showing both to the user would just encumber the understanding of the specification. To avoid this, and also to speed up analysis, the Analyzer implements a powerful <em>symmetry breaking</em> mechanism that excludes from the analysis most isomorphic (i.e., symmetric) instances. This feature is also very convenient for validation, as we can quickly see many truly different instances of our model. For example, after pressing <span class="guilabel">New</span> we could get the following instance. Re-enforcing the fact that name are meaningless, if there is a single atom in a signature it is not numbered.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_1_2/filesystem.als#L19-L26"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance25.png" style="width: 500px;" />
+<p id="index-6">Another distinguishing feature of Alloy is that the instances returned by the analysis commands are, by default, depicted graphically as graph-like structures in a pop-up window, just as the one above: atoms belonging to the different signatures are nodes (depicted as boxes by default) and associations between atoms are edges (depicted as arrows). In this instance we have two objects, one of them is a directory and the other a file. We can ask the Analyzer to generate a different instance, by pressing <span class="guilabel">New</span> in the visualizer toolbar, or selecting menu option <span class="menuselection">Instance ‣ Show New Solution</span> (shortcut <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>-<kbd class="kbd docutils literal notranslate">n</kbd></kbd>). As mentioned before, atoms have no intrinsic semantics. In particular, the names the Analyzer generates for them are meaningless: <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object0</span></code> isn’t the name of a particular file existing in a real-world file system, but just a name to help us distinguish it from other elements in the domain. As such, two instances that only differ in the names of the atoms are in fact the same instance (they are isomorphic up to atom renaming), and showing both to the user would just encumber the understanding of the specification. To avoid this, and also to speed up analysis, the Analyzer implements a powerful <em>symmetry breaking</em> mechanism that excludes from the analysis most isomorphic (i.e., symmetric) instances. This feature is also very convenient for validation, as we can quickly see many truly different instances of our model. For example, after pressing <span class="guilabel">New</span> we could get the following instance. Re-enforcing the fact that name are meaningless, if there is a single atom in a signature it is not numbered in the visualization by default.</p>
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_01_02/filesystem.als#L26-L32"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance25.png" style="width: 500px;" />
 </a>
 <p id="index-7">If you  try to run these commands in the Analyzer it is possible that you get different instances. The Analyzer relies on lower-level
 <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">SAT</a>
@@ -403,7 +403,7 @@ instances using <span class="guilabel">New</span> we will no longer see objects 
 are simultaneously files and directories, but we will eventually get an instance
 such as the following, where we have the problem of having an object (named <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object</span></code>)
 that is neither a file nor a directory.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_3/filesystem.als#L9-L16"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance34.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_03/filesystem.als#L18-L24"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance34.png" style="width: 500px;" />
 </a>
 <p id="index-10">A frequent requirement for extension signatures is that they
 actually form a partition of the parent signature, meaning that the parent signature must not contain atoms besides those
@@ -424,7 +424,7 @@ multiplicities that can be used in a signature declaration:
 <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">some</span></code> forces the signature to always have some atoms;
 <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">lone</span></code> restricts the signature to have at most one atom; and
 <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">one</span></code> restricts the signature to have exactly one atom. To denote the root directory, we can declare  a
-signature <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code>  extending <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code> with multiplicity <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">one</span></code>.</p>
+signature <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code> extending <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> with multiplicity <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">one</span></code>.</p>
 <div class="highlight-practicalalloy notranslate"><div class="highlight"><pre><span></span><span class="k">one</span> <span class="kd">sig</span> <span class="nc">Root</span> <span class="k">extends</span> <span class="nc">Dir</span> <span class="o">{}</span>
 </pre></div>
 </div>
@@ -434,7 +434,7 @@ declared with <code class="code highlight alloy practicalalloy docutils literal 
 <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code> in the instance visualizer. A possible instance returned
 by the <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">example</span></code> command is the following, where we have three
 directories, one of them being (necessarily, due to multiplicity <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">one</span></code>) the root directory.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_4_5/filesystem.als#L17-L24"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance43.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_04_05/filesystem.als#L28-L34"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance43.png" style="width: 500px;" />
 </a>
 <p>Objects inside directories have an associated name, so we will need a
 signature to represent the latter.  In our file system model we will
@@ -450,7 +450,7 @@ object inside a directory and the respective name.</p>
 <p>With these new signature declarations, a possible instance of our specification is the following, with
 two different names, two entries, one file, and two directories, one
 of which is the root.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_4_5/filesystem.als#L26-L35"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance53.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_04_05/filesystem.als#L36-L44"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance53.png" style="width: 500px;" />
 </a>
 <p id="index-12">To enable automatic analysis,
 Alloy imposes a bound on the size of all signatures. This bound is
@@ -492,7 +492,7 @@ set a different scope.</p>
 Full model for the section</div>
 <p class="sd-card-text">Download and explore the files relevant for the model at this point of the book.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/main/structural-modeling/signature-declaration"><span>https://github.com/practicalalloy/models/tree/main/structural-modeling/signature-declaration</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/signature-declaration/"><span>https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/signature-declaration/</span></a></div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-header docutils">
 <p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-beaker" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"></path></svg> Further reading</p>
@@ -562,7 +562,7 @@ explicitly state the multiplicity of a field, even if it is
 </pre></div>
 </div>
 <p>By executing it, we could now get the following instance.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_6/filesystem.als#L19-L29"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance63.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_06/filesystem.als#L28-L37"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance63.png" style="width: 500px;" />
 </a>
 <p id="index-15">Binary relations are depicted by the Analyzer using labelled arrows: each
 arrow is a pair contained in the relation, whose first atom is the
@@ -602,7 +602,7 @@ associated with each entry. With these two fields, an entry acts like a record t
 </pre></div>
 </div>
 <p>After executing this command we could get the following instance.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_7_8/filesystem.als#L23-L35"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance73.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_07_08/filesystem.als#L32-L43"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance73.png" style="width: 500px;" />
 </a>
 <p id="index-17">In this instance some problems with our specification are evident, for example
 entries shared between directories or files not belonging to any directory. As
@@ -612,7 +612,7 @@ which can make instances easier to understand. For our file system model, we
 will use different colours and shapes for entries and file system objects, and
 show entry names as attributes rather than edges. After the customization, the
 instance will be depicted as follows.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/7911fd30610fadc146acae936f08a21d1a1c897b/structural-modeling/instance_7_8/filesystem.als#L37-L49"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance83.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_07_08/filesystem.als#L45-L56"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance83.png" style="width: 500px;" />
 </a>
 <div class="sd-sphinx-override sd-cards-carousel sd-card-cols-2 docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
@@ -624,7 +624,7 @@ instance will be depicted as follows.</p>
 Full model for the section</div>
 <p class="sd-card-text">Download and explore the files relevant for the model at this point of the book.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/main/structural-modeling/field-declaration"><span>https://github.com/practicalalloy/models/tree/main/structural-modeling/field-declaration</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/field-declaration"><span>https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/field-declaration</span></a></div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-header docutils">
 <p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-beaker" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"></path></svg> Further reading</p>
@@ -664,8 +664,8 @@ in our specification of a file system, namely it currently allows:</p>
 <ul class="simple">
 <li><p>Shared entries between directories (entry <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Entry3</span></code> belongs both to <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code>).</p></li>
 <li><p>Different entries in the same directory with the same name (all entries inside <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> have the same name <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Name</span></code>).</p></li>
-<li><p>The same directory appears in more than one entry (<code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> is the object of all entries).</p></li>
-<li><p>A dangling file that does not belong to an entry (<code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">File</span></code>).</p></li>
+<li><p>The same directory to appear in more than one entry (<code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> is the object of all entries).</p></li>
+<li><p>Dangling files that do not belong to any entry (<code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">File</span></code>).</p></li>
 </ul>
 <p id="index-18">To prevent these issues, we must add constraints to our model. In Alloy, constraints that are assumptions of the model (that is, necessarily valid) should be added inside a <em>fact</em>. A fact is declared with keyword <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">fact</span></code> followed by an optional name and a set of constraints inside braces.</p>
 <p id="index-19">To specify constraints Alloy has a dual syntax for the usual Boolean operators: they can be both written
@@ -697,7 +697,7 @@ these can be applied to any relation, including fields and signatures. A typical
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Of course, this fact is redundant, since it is a consequence of <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">File</span></code> being extensions of the abstract signature <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object</span></code>. However, it illustrates an important point about Alloy’s motto that “everything is a relation”. In Alloy, the operator <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="ow">in</span></code> is the standard subset or equal operator of set theory and not the membership test. A formula like <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">x</span> <span class="ow">in</span> <span class="n">Dir</span></code> is allowed, because in Alloy every expression denotes a relation (a set of tuples). In particular, quantified variables are also relations, namely singleton sets with a unary tuple containing a single atom drawn from the range of the quantifier. When <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">x</span></code> is such a singleton set, an inclusion check like <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">x</span> <span class="ow">in</span> <span class="n">Dir</span></code> actually performs a membership check. This is an example of how the above motto enables the simplification of the syntax and semantics of the language, since there is no need for a different operator for membership check.</p>
+<p>Of course, this fact is redundant, since it is a consequence of signature <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object</span></code> being abstract and extended by <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">File</span></code>. However, it illustrates an important point about Alloy’s motto that “everything is a relation”. In Alloy, the operator <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="ow">in</span></code> is the standard subset or equal operator of set theory and not the membership test. A formula like <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">x</span> <span class="ow">in</span> <span class="n">Dir</span></code> is allowed, because in Alloy every expression denotes a relation (a set of tuples). In particular, quantified variables are also relations, namely singleton sets with a unary tuple containing a single atom drawn from the range of the quantifier. When <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">x</span></code> is such a singleton set, an inclusion check like <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">x</span> <span class="ow">in</span> <span class="n">Dir</span></code> actually performs a membership check. This is an example of how the above motto enables the simplification of the syntax and semantics of the language, since there is no need for a different operator for membership check.</p>
 <p id="index-21">The essential operator in relational logic is <em>composition</em>, the
 binary operator written as <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="o">.</span></code> (also known as <em>dot-join</em>). This operator allows us to
 navigate through fields to obtain related atoms. Understanding
@@ -737,10 +737,10 @@ side: for example, <code class="code highlight alloy practicalalloy docutils lit
 that contain some entry.
 Compositions can also be chained to obtain atoms that are somehow
 indirectly related. For example, <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">d</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">object</span></code> denotes the
-set of all file system objects that are contained in the entries of
+set of all file system objects that are contained in some entry of
 directory <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">d</span></code>. And again, it is possible to navigate backwards
 through a chain of compositions. For example, <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">entries</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">d</span></code>
-denotes the set of all directories with entries that point to directory
+denotes the set of all directories that have some entry that points to directory
 <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">d</span></code>.</p>
 <p>Using <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="o">.</span></code> we can now declare a fact that prevents the first
 issue identified in the beginning of this section. We can almost directly transliterate the
@@ -756,7 +756,7 @@ directories <code class="code highlight alloy practicalalloy docutils literal hi
 <span class="o">}</span>
 </pre></div>
 </div>
-<p id="index-22">The need to quantify over two ore more different variables is very
+<p id="index-22">The need to quantify over two or more different variables is very
 common, so Alloy provides the modifier <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="k">disj</span></code>, that can be added
 between a quantifier and the variables, precisely to restrict those
 variables to be different. This modifier simplifies the formulas,
@@ -820,7 +820,7 @@ specify such a constraint, we can begin by determining the set of all objects
 that are contained in any entry using expression <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Entry</span><span class="o">.</span><span class="n">object</span></code>, and then
 enforce that this set is equal the set of all objects minus the root.</p>
 <div class="highlight-practicalalloy notranslate"><div class="highlight"><pre><span></span><span class="k">fact</span> <span class="nf">no_dangling_objects</span> <span class="o">{</span>
-  <span class="c1">// Every object except the root is contained somewhere</span>
+  <span class="c1">// Every object except the root is contained in some entry</span>
   <span class="n">Entry</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">Object</span> <span class="o">-</span> <span class="n">Root</span>
 <span class="o">}</span>
 </pre></div>
@@ -828,7 +828,7 @@ enforce that this set is equal the set of all objects minus the root.</p>
 <p>After adding these four facts, if we re-execute the <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">example</span></code> command and
 iterate with <span class="guilabel">New</span>, we’ll notice that the problems identified above
 seem to be gone. However, we will still get instances such as the following.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/d0449860a717e8169e96139cfe041a20dfa7209f/structural-modeling/instance_9/filesystem.als#L49-L61"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance93.png" style="width: 500px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_09/filesystem.als#L57-L68"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance93.png" style="width: 500px;" />
 </a>
 <p>This instance makes clear two additional issues in our model (the second
 was actually already present in the previous problematic instance):</p>
@@ -872,7 +872,7 @@ the file system contains no partitions.</p>
 Full model for the section</div>
 <p class="sd-card-text">Download and explore the files relevant for the model at this point of the book.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/main/structural-modeling/specifying-constraints"><span>https://github.com/practicalalloy/models/tree/main/structural-modeling/specifying-constraints</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/specifying-constraints"><span>https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/specifying-constraints</span></a></div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-header docutils">
 <p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-beaker" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"></path></svg> Further reading</p>
@@ -991,7 +991,7 @@ all formulas of relational logic to this style in Alloy.</p>
 Full model for the section</div>
 <p class="sd-card-text">Download and explore the files relevant for the model at this point of the book.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/main/structural-modeling/a-question-of-style"><span>https://github.com/practicalalloy/models/tree/main/structural-modeling/a-question-of-style</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/a-question-of-style"><span>https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/a-question-of-style</span></a></div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-header docutils">
 <p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-beaker" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"></path></svg> Further reading</p>
@@ -1089,7 +1089,7 @@ have been imposed before, we can use a <code class="code highlight alloy practic
 </pre></div>
 </div>
 <p>Unfortunately, executing this command reveals a counter-example.</p>
-<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/d0449860a717e8169e96139cfe041a20dfa7209f/structural-modeling/instance_10/filesystem.als#L69-L81"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance102.png" style="width: 400px;" />
+<a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/2024-02-28/structural-modeling/instance_10/filesystem.als#L72-L83"><img alt="Get the code to generate this instance." class="align-center" src="../../_images/instance102.png" style="width: 400px;" />
 </a>
 <p>The problem is that we have two directories that contain each
 other. Fortunately, this counter-example is not an issue in real file
@@ -1138,7 +1138,7 @@ consistent and admits non-trivial file systems.</p>
 Full model for the section</div>
 <p class="sd-card-text">Download and explore the files relevant for the model at this point of the book.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/main/structural-modeling/verifying-assertions"><span>https://github.com/practicalalloy/models/tree/main/structural-modeling/verifying-assertions</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/verifying-assertions"><span>https://github.com/practicalalloy/models/tree/2024-02-28/structural-modeling/verifying-assertions</span></a></div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-header docutils">
 <p class="sd-card-text"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-beaker" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"></path></svg> Further reading</p>
@@ -1210,7 +1210,7 @@ Working with integers</div>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 04, 2025</div>
+              Last updated on Feb 10, 2025</div>
           </div>
           <div class="right-details">
             

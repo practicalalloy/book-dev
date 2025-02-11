@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="article:modified_time" content="2025-02-04T10:43:06+00:00" /><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Higher-arity relations" href="../nary-relations/index.html" /><link rel="prev" title="Commands in detail" href="../commands/index.html" />
+    <meta property="article:modified_time" content="2025-02-11T13:52:25+00:00" /><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Higher-arity relations" href="../nary-relations/index.html" /><link rel="prev" title="Commands in detail" href="../commands/index.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Visualization customization - Practical Alloy</title>
@@ -339,20 +339,17 @@ and then tick the <span class="guilabel">Show</span> option twice to choose the
 <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Name</span></code> atom will disappear.</p>
 <a class="reference internal image-reference" href="../../../../_images/theme2.png"><img alt="../../../../_images/theme2.png" class="align-center" src="../../../../_images/theme2.png" style="width: 700px;" />
 </a>
-<p id="index-4">Another common customization is to give different colors (or different shapes and borders) to atoms belonging to different signatures. First, we will select a different color palette, with more subdue colors. First select the <span class="guilabel">general graph settings</span>, and select the <span class="guilabel">Martha</span> palette both for node and edge colors. After pressing <span class="guilabel">Apply</span> we will get some nice faded colors.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>&#64;david: mention color-blind palette</p>
-</div>
+<p id="index-4">Another common customization is to give different colors (or different shapes and borders) to atoms belonging to different signatures. First, we will select a different color palette, with more subdued colors. To do so, select the <span class="guilabel">general graph settings</span>, and then select the <span class="guilabel">Martha</span> palette both for node and edge colors. After pressing <span class="guilabel">Apply</span> we will get some nice faded colors.</p>
 <a class="reference internal image-reference" href="../../../../_images/theme3.png"><img alt="../../../../_images/theme3.png" class="align-center" src="../../../../_images/theme3.png" style="width: 700px;" />
 </a>
+<p>Notice that since version 6.2 of Alloy, the visualizer features a colorblind-friendly palette called <span class="guilabel">Tol</span>, inspired by (but not completely equivalent to) one of Paul Tol’s <a class="reference external" href="https://personal.sron.nl/~pault/">color schemes</a>.</p>
 <p>Since entries are auxiliary structures in defining the (supposedly) tree-like structure of the file system, we will paint them gray. To do so select signature <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Entry</span></code>, then the color <span class="guilabel">Gray</span> in the drop-down menu in the top left-hand corner, and finally <span class="guilabel">Apply</span>.</p>
 <a class="reference internal image-reference" href="../../../../_images/theme4.png"><img alt="../../../../_images/theme4.png" class="align-center" src="../../../../_images/theme4.png" style="width: 700px;" />
 </a>
-<p>For file system objects we will choose a more eye-catching red color. We don’t have to set this color separately for signatures <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code>, <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">File</span></code>. By default most theme options of extension signatures are set as <span class="guilabel">Inherited</span> from their parent signature. As such, it suffices to set the color red for the <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object</span></code> signature, and both their children will inherit this setting. You also have the option to set the color to <span class="guilabel">Magic</span>, which will assign a different color to each extension signature, instead of the default yellow. That is actually the default setting for the color of edges, as can be seen in the color of <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">entries</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">object</span></code>. Finally we will choose different shapes for different file system objects. Let’s keep files as rectangles, but choose the shape <span class="guilabel">Trapezoid</span> for directories and a <span class="guilabel">House</span> for the root. The shape can be chosen in the drop-down menu in the top right-hand corner. The combo-box to the left of that one changes the style of the border. After pressing <span class="guilabel">Apply</span> we have the following visualization.</p>
+<p>For file system objects we will choose a more eye-catching red color. We don’t have to set this color separately for signatures <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Dir</span></code>, <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Root</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">File</span></code>. By default most theme options of extension signatures are set as <span class="guilabel">Inherited</span> from their parent signature. As such, it suffices to set the color red for the <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">Object</span></code> signature, and both their children will inherit this setting. You also have the option to set the color to <span class="guilabel">Magic</span>, which will assign a different color to each extension signature, instead of the default yellow. That is actually the default setting for the color of edges, as you can see by the colors of <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">entries</span></code> and <code class="code highlight alloy practicalalloy docutils literal highlight-practicalalloy"><span class="n">object</span></code>. Finally we will choose different shapes for different file system objects. Let’s keep files as rectangles, but choose the shape <span class="guilabel">Trapezoid</span> for directories and a <span class="guilabel">House</span> for the root. The shape can be chosen in the drop-down menu in the top right-hand corner. The combo-box to the left of that one allows changing the style of the border. After pressing <span class="guilabel">Apply</span> we have the following visualization.</p>
 <a class="reference internal image-reference" href="../../../../_images/theme5.png"><img alt="../../../../_images/theme5.png" class="align-center" src="../../../../_images/theme5.png" style="width: 700px;" />
 </a>
-<p>One last customization that is often useful is to change the label of an element in the graph, be it a signature, a subset or relation (for instance, to make it shorter, or to remove the namespace prepended to elements from other modules). This can be changed in the text box in the top left-hand corner after selecting an element.</p>
+<p>One last customization that is often useful is to change the label of an element in the graph, be it a signature, a subset or relation (for instance, to make it shorter, or to remove the namespace prepended to elements from imported modules). This can be changed in the text box in the top left-hand corner after selecting an element.</p>
 <div class="sd-sphinx-override sd-cards-carousel sd-card-cols-2 docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-header docutils">
@@ -384,7 +381,7 @@ layout for our instance is the following.</p>
 <a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/a3bbb60fa184094d4de0f33aa1e907f6b38ebf88/structural-topics/themes/instance_3/filesystem.als#L24-L35"><img alt="Get the code to generate this instance." class="align-center" src="../../../../_images/instance310.png" style="width: 500px;" />
 </a>
 <p id="index-7">More information about how the magic layout actually works can be found in
-<a class="reference internal" href="../../../../bibliography.html#led07" id="id2"><span>[LED07]</span></a>. In this case we prefer our handmade customization and so we will load
+<a class="reference internal" href="../../../../bibliography.html#led07" id="id1"><span>[LED07]</span></a>. In this case we prefer our handmade customization and so we will load
 back our previously saved theme by selecting <span class="menuselection">Theme ‣ Load
 theme</span> in the menu.</p>
 <a class="reference external image-reference" href="https://github.com/practicalalloy/models/blob/a3bbb60fa184094d4de0f33aa1e907f6b38ebf88/structural-topics/themes/instance_4/filesystem.als#L24-L35"><img alt="Get the code to generate this instance." class="align-center" src="../../../../_images/instance47.png" style="width: 450px;" />
@@ -461,7 +458,7 @@ Higher-arity relations</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Model finding</div>
-<p class="sd-card-text">Sometimes we can have <code class="code docutils literal notranslate"><span class="pre">$</span></code> prefixed atoms in a visualization that are do not correspond to any of the declared derived functions. Learn how such Skolemized variables were introduced by the model finding analysis technique.</p>
+<p class="sd-card-text">Sometimes we can have <code class="code docutils literal notranslate"><span class="pre">$</span></code> prefixed atoms in a visualization that  do not correspond to a declared derived function. Learn how such Skolemized variables were introduced by the model finding analysis technique.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="../commands/index.html#commands"><span class="std std-ref">Commands in detail</span></a></div>
 </div>
@@ -474,7 +471,7 @@ chapter. In the visualizer toolbar, buttons <span class="guilabel">Viz</span>, <
 <span class="guilabel">Table</span>, and <span class="guilabel">Tree</span> control the representation of the
 instance. Option <span class="guilabel">Viz</span> is the default graph representation, while the
 other 3 are textual representations of the relations in plain text, tabular
-format, and in hierarchical structure. For illustration purposes, below is the
+format, and in hierarchical structure, respectively. For illustration purposes, below is the
 representation of the same instance in tabular format, where each table denotes
 a signature and the associated fields. Despite the usefulness of the graph
 visualization, when instances become too complex these simpler representations
@@ -519,7 +516,7 @@ can prove helpful.</p>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Feb 04, 2025</div>
+              Last updated on Feb 11, 2025</div>
           </div>
           <div class="right-details">
             

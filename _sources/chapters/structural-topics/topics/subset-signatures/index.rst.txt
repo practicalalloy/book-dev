@@ -12,7 +12,7 @@ Sets (unary relations) can be introduced in a model through subset signatures.
 As we've already seen, unlike sub-signatures defined by extension, these are not
 guaranteed to be disjoint among themselves. In chapter
 :ref:`structural-modeling` we've seen the basic use of subset signatures, but
-since we actually expected those subset signatures to be disjoint, there were
+since we actually expected those subset signatures to be disjoint, they were
 better modelled as extension signatures. That is not always the case, and in fact
 subset signatures can be used to encode powerful patterns, including something
 that resembles multiple inheritance.
@@ -40,7 +40,7 @@ that an atom belongs to the :alloy:`Tagged` subset signature is depicted with an
 .. image:: instance1.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/470a395c89ea56c8c6cf43e37e18c6dee85dffc1/structural-topics/subset-signatures/instance_1/filesystem.als#L77-L90
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/subset-signatures/instance_01/filesystem.als#L76-L88
    :alt: Get the code to generate this instance.
    
 Even more interesting, subset signatures can have their own fields declared
@@ -53,7 +53,7 @@ non-empty set of tags assigned to each object, as follows.
     sig Tag {}
 
     sig Tagged in Object {
-        tags : some Tag
+      tags : some Tag
     }
 
 Now, for instance, any tagged directory will both be related through relations
@@ -65,13 +65,13 @@ field :alloy:`tags` to be shown as an attribute).
 .. image:: instance2.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/470a395c89ea56c8c6cf43e37e18c6dee85dffc1/structural-topics/subset-signatures/instance_2/filesystem.als#L69-L84
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/subset-signatures/instance_02/filesystem.als#L80-L94
    :alt: Get the code to generate this instance.
 
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/subset-signatures/mixing-subset-and-extension-signatures
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/subset-signatures/mixing-subset-and-extension-signatures
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -123,13 +123,13 @@ set the abstract top-level `Tag` signature to be white and have the default rect
 .. image:: instance3.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/470a395c89ea56c8c6cf43e37e18c6dee85dffc1/structural-topics/subset-signatures/instance_3/filesystem.als#L88-L107
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/subset-signatures/instance_03/filesystem.als#L98-L116
    :alt: Get the code to generate this instance.
 
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/subset-signatures/simulating-multiple-inheritance
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/subset-signatures/simulating-multiple-inheritance
 
       :octicon:`file-badge` Alloy model 
       ^^^
@@ -163,14 +163,14 @@ signature level by adapting its declaration as follows.
 .. code-block::
 
   sig Tagged in Dir + File {
-      tags : some Tag
+    tags : some Tag
   }
 
-Now subset :alloy:`Tagged` is restricted to only :alloy:`Dir` and :alloy:`File`
+Now subset signature :alloy:`Tagged` is restricted to only :alloy:`Dir` and :alloy:`File`
 atoms, excluding other kinds of objects. In this example :alloy:`Dir` and
 :alloy:`File` share the same top-level signature :alloy:`Object`, but signatures can
 be defined as the subset of the union of completely unrelated signatures. To properly visualize instances, you will have to customize the theme again at this
-point. This is because in the previous version, subset :alloy:`Tagged` and field
+point. This is because in the previous version, subset signature :alloy:`Tagged` and field
 :alloy:`tags` were defined for the full signature :alloy:`Object` in the theme; now, they are no longer defined for all objects, but only for signatures
 :alloy:`File` and :alloy:`Dir`. At the theme customization pane, this will originate two duplicates of :alloy:`Tagged` and :alloy:`tags`, one for each of these two signatures, which
 both have to be customized again.
@@ -187,7 +187,7 @@ we wish to assign user permissions to all directories and files, but not to symb
   sig Permission {}
 
   sig NonSymlink = Dir + File {
-      permission : one Permission
+    permission : one Permission
   }
 
 An instance for the empty command for this version of the model is the following.
@@ -195,7 +195,7 @@ An instance for the empty command for this version of the model is the following
 .. image:: instance4.png
    :width: 500 px
    :align: center
-   :target: https://github.com/practicalalloy/models/blob/470a395c89ea56c8c6cf43e37e18c6dee85dffc1/structural-topics/subset-signatures/instance_4/filesystem.als#L95-L117
+   :target: https://github.com/practicalalloy/models/blob/2024-02-28/structural-topics/subset-signatures/instance_04/filesystem.als#L105-L126
    :alt: Get the code to generate this instance.
 
 Obviously, this example is a bit contrived since a simpler solution would be to
@@ -208,7 +208,7 @@ On a last note, due to all the flexibility of subset signatures, particularly th
 .. card-carousel:: 2
 
    .. card:: Full model for the section
-      :link: https://github.com/practicalalloy/models/tree/main/structural-topics/subset-signatures/cross-signature-subsets
+      :link: https://github.com/practicalalloy/models/tree/2024-02-28/structural-topics/subset-signatures/cross-signature-subsets
 
       :octicon:`file-badge` Alloy model 
       ^^^
